@@ -10,10 +10,13 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Pausable.sol";
 
 
 
-
+// using this coin like other coins [transfer, approve, mint, burn, pause, unpause]
+// blacklisting some addresses
 
 contract TestToken is ERC20, ERC20Permit, ERC20Pausable, Ownable {
+    // state variables
     mapping(address => bool) private blacklist;
+
 
     constructor(
         string memory _name,
